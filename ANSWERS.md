@@ -9,11 +9,7 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Question**: Explain the difference between a **thread** and a **process**. Why did we use threads in this assignment instead of creating separate processes?
 
-**Your Answer:**
-
-[Write your answer here. Consider: What is a process? What is a thread? How do they differ in terms of memory, resources, creation overhead? Why are threads more suitable for this simulation?]
-
----
+A Process is an independent execution unit that has its own dedicated memory space, stack, and resources provided by the Operating System. In contrast, a Thread (often called a lightweight process) is a unit of execution within a process, where multiple threads share the same memory and resources but maintain their own execution stacks. In this assignment, we used threads because they are much more efficient for this simulation; creating a new process is resource-intensive ("high overhead"), whereas threads allow for faster context switching. For example, in our code, we implement the Runnable interface in the Process class and use new Thread(process) to represent our simulated processes. This allows all simulated processes to exist within a single JVM process, sharing the processMap and processQueue while executing concurrently. If we had used separate OS processes, sharing data like the contextSwitchCount would have been significantly more complex and slower.
 
 ## Question 2: Ready Queue Behavior
 
@@ -21,17 +17,19 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Your Answer:**
 
-[Write your answer here. Describe the specific behavior - where does the process go? When does it run again? Give an example from your actual program output showing a process that was re-queued.]
+In Round-Robin scheduling, if a process does not finish within its assigned Time Quantum, it is preempted by the scheduler to allow other processes a fair share of the CPU. The process is moved from the "Running" state back to the end of the Ready Queue, where it must wait for its next turn.
 
 Example from my output:
-```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
-```
+ظû╢ P1 executing quantum [4000ms]
+  ظأة Quantum progress: [ظûêظûêظûêظûّظûّظûّظûّظûّظûّظûّظûّظûّظûّظ         ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûّظûّظûّظûّظûّظûّظûّظ      ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظûّظûّظûّظ   ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûê] 100%
+  ظ╕ P1 completed quantum 4000ms ظ¤é Overall progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظûّظûّ] 89%
+     Remaining time: 919ms
+  ظ╗ P1 yields CPU for context switch
+
+  ظئـ P1 (Priority: 3) added to ready queue ظ¤é Burst time: 8919ms
 
 **Explanation of example:**
-[Explain what's happening in the output snippet you pasted]
-
----
+Looking at our program output, when a process like P1 executes and its remainingTime is still greater than zero, the code prints: P1 yields CPU for context switch. At this point, the scheduler calls processQueue.add(thread), effectively re-queuing it. This ensures that no single process monopolizes the CPU for an extended period, which is the core principle of time-sharing systems. The process will eventually reach the front of the queue again to continue its execution from where it left off
 
 ## Question 3: Thread States
 
@@ -39,19 +37,7 @@ Example from my output:
 
 **Your Answer:**
 
-[Write your answer here. For each state, explain when P1 enters that state during the simulation. Use your understanding of the code to trace through the lifecycle.]
-
-1. **New**: [When is P1 in New state?]
-
-2. **Runnable**: [When does P1 become Runnable?]
-
-3. **Running**: [When is P1 Running?]
-
-4. **Waiting**: [When/why would P1 be Waiting?]
-
-5. **Terminated**: [When is P1 Terminated?]
-
----
+During the simulation, a thread for a process (e.g., P1) transitions through several states. First, it enters the New state when we instantiate it using new Thread(process). It moves to the Runnable state when we call addProcessToQueue, placing it in our processQueue. When the scheduler executes currentThread.start(), the thread enters the Running state, and we see the message: P1 executing quantum. If the thread needs to wait for its turn again after a quantum, it conceptually enters a Waiting/Ready state in the queue. Finally, when remainingTime reaches zero, the process prints: P1 finished execution! and the thread enters the Terminated state. We can trace this in the code through the isFinished() check, which determines if the thread should be disposed of or put back into the queue.
 
 ## Question 4: Real-World Applications
 
@@ -59,31 +45,18 @@ Example from my output:
 
 **Your Answer:**
 
-### Example 1: [Name of application/scenario]
-
-**Description**: 
-[Describe the real-world scenario or application]
-
-**Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
-
-### Example 2: [Name of application/scenario]
-
-**Description**: 
-[Describe the real-world scenario or application]
-
-**Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
-
----
+Example 1: Web Servers (like Apache or Nginx). Round-Robin scheduling is highly useful here to handle thousands of incoming client requests fairly. By giving each request a small time slice, the server ensures that no single large file download blocks other users from loading small text pages. This maintains high responsiveness and prevents "starvation" of smaller tasks.
+Example 2: Multi-user Operating Systems (like Linux or Windows). When multiple users are logged into a server or even a single user is running many apps (Spotify, Chrome, Word), Round-Robin ensures each application gets CPU time. This provides predictability and a smooth user experience, as the rapid context switching (tracked in our code by contextSwitchCount) creates the illusion that all programs are running perfectly in parallel.
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1. 
-2. 
-3. 
+
+1. The fundamental distinction between Threads and Processes: I now understand that while both are units of execution, threads are much more efficient for simulation due to their ability to share memory and resources within a single process.
+2. Round-Robin Scheduling Logic: I learned how the Time Quantum enforces fairness among tasks, ensuring that long-running processes are preempted and re-queued to maintain system responsiveness.
+3. Thread Lifecycle and States: I can now trace a thread's journey from its creation (New) through its execution (Running) and waiting periods (Ready/Waiting) until it finally completes its task (Terminated).
 
 **Concepts I need to study more:**
-1. 
-2. 
+
+1. Advanced Synchronization Mechanisms: I want to dive deeper into how "Locks" and "Semaphores" function internally to prevent complex race conditions in large-scale multithreaded systems.
+2. Context Switch Overhead: I am interested in learning more about the specific hardware-level costs involved when the OS saves and restores thread states, and how to minimize this overhead in real-time systems.
