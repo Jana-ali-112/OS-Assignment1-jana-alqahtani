@@ -132,9 +132,10 @@ Time spent: 30 minutes
 ## Summary
 
 **Total time spent on assignment**: [X hours]
-
+4 hours and 20 minutes
 **Most challenging part**: 
-
+Choosing clear and meaningful variable names
 **Most interesting learning**: 
-
+Understanding how the code works together and improving debugging skills
 **What I would do differently next time**: 
+Start earlier and plan the work better
