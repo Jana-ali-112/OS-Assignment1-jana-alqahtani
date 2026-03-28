@@ -37,7 +37,14 @@ Looking at our program output, when a process like P1 executes and its remaining
 
 **Your Answer:**
 
-During the simulation, a thread for a process (e.g., P1) transitions through several states. First, it enters the New state when we instantiate it using new Thread(process). It moves to the Runnable state when we call addProcessToQueue, placing it in our processQueue. When the scheduler executes currentThread.start(), the thread enters the Running state, and we see the message: P1 executing quantum. If the thread needs to wait for its turn again after a quantum, it conceptually enters a Waiting/Ready state in the queue. Finally, when remainingTime reaches zero, the process prints: P1 finished execution! and the thread enters the Terminated state. We can trace this in the code through the isFinished() check, which determines if the thread should be disposed of or put back into the queue.
+A thread (P1) transitions through these states during the execution of our simulation:
+• New State: The process (P1) is created as a thread object in the memory. It hasn't started execution yet.
+• Runnable State: When we call P1.start(), the thread moves to the Runnable state. It is now waiting in the ready queue for the CPU scheduler to pick it up.
+• Running State: The CPU begins executing the code inside the run() method of P1.
+• Waiting/Blocked State: The thread enters this state when it is temporarily inactive:
+• Thread.sleep(duration): Used in the simulation to mimic the execution time, putting P1 into a "Timed Waiting" state.
+• Thread.join(): Used when one thread must wait for P1 to finish its execution before proceeding.
+• Terminated State: Once the run() method finishes execution or an error occurs, P1 enters this final state and cannot be restarted.
 
 ## Question 4: Real-World Applications
 
