@@ -113,18 +113,21 @@ Solution: سويت testing أكثر من مرة وعلى سيناريوهات م
 
 Time spent: 35 minutes
 
-### Entry 6 - [Optional - Date and Time]
-**What I did**: 
+### Entry 6 - [April 10, 2026, 7:20 PM]
 
-**Details**: 
+What I did: Improved code readability and documentation
 
-**Challenges**: 
+Details:
+ • Refactored parts of the code to make it cleaner
+ • Renamed variables to be more descriptive
+ • Added detailed comments for each function
+ • Updated the README file with clear instructions
 
-**Solution**: 
+Challenges: Choosing clear and meaningful variable names
 
-**Time spent**: 
+Solution: Followed standard naming conventions and reviewed examples online
 
----
+Time spent: 30 minutes
 
 ## Summary
 
