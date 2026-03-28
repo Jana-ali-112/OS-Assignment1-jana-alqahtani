@@ -48,18 +48,22 @@ Solution: Searched for explanations online and re-read the code multiple times
 
 Time spent: 45 minutes
 
-### Entry 2 - [Date and Time]
-**What I did**: 
+Entry 3 - [April 3, 2026, 6:00 PM]
 
-**Details**: 
+What I did: Implemented new functionality in the program
 
-**Challenges**: 
+Details:
+ • Added new method required for the assignment
+ • Updated existing code to integrate the new function
+ • Ran the program to test output accuracy
+ • Fixed minor logical errors
 
-**Solution**: 
+Challenges: Faced errors while integrating the new function
 
-**Time spent**: 
+Solution: Used debugging and checked syntax carefully
 
----
+Time spent: 1 hour
+
 
 ### Entry 3 - [Date and Time]
 **What I did**: 
