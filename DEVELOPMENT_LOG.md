@@ -32,18 +32,21 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Your Development Log:
 
-### Entry 1 - [Date and Time]
-**What I did**: 
+Entry 1 - [April 2, 2026, 4:15 PM]
 
-**Details**: 
+What I did: Continued working on the project and reviewed the code structure
 
-**Challenges**: 
+Details:
+ • Reviewed all project files and understood their functionality
+ • Organized folders for better readability
+ • Added comments to explain important parts of the code
+ • Tested basic functions to ensure everything works correctly
 
-**Solution**: 
+Challenges: Had difficulty understanding some parts of the starter code
 
-**Time spent**: 
+Solution: Searched for explanations online and re-read the code multiple times
 
----
+Time spent: 45 minutes
 
 ### Entry 2 - [Date and Time]
 **What I did**: 
