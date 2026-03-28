@@ -48,7 +48,7 @@ Solution: Searched for explanations online and re-read the code multiple times
 
 Time spent: 45 minutes
 
-Entry 3 - [April 3, 2026, 6:00 PM]
+Entry 2 - [April 3, 2026, 6:00 PM]
 
 What I did: Implemented new functionality in the program
 
@@ -65,18 +65,21 @@ Solution: Used debugging and checked syntax carefully
 Time spent: 1 hour
 
 
-### Entry 3 - [Date and Time]
-**What I did**: 
+### Entry 3 [April 5, 2026, 3:30 PM]
 
-**Details**: 
+What I did: Debugged and improved program performance
 
-**Challenges**: 
+Details:
+ • Identified bugs causing incorrect output
+ • Fixed logical and runtime errors
+ • Optimized some parts of the code
+ • Re-tested the program multiple times
 
-**Solution**: 
+Challenges: Some bugs were not easy
 
-**Time spent**: 
+Solution: استخدمت الطباعة (print statements) لتتبع الأخطاء
 
----
+Time spent: 50 minutes
 
 ### Entry 4 - [Date and Time]
 **What I did**: 
