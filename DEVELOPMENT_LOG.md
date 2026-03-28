@@ -32,7 +32,7 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Your Development Log:
 
-Entry 1 - [April 2, 2026, 4:15 PM]
+### Entry 1 - [April 2, 2026, 4:15 PM]
 
 What I did: Continued working on the project and reviewed the code structure
 
@@ -48,7 +48,7 @@ Solution: Searched for explanations online and re-read the code multiple times
 
 Time spent: 45 minutes
 
-Entry 2 - [April 3, 2026, 6:00 PM]
+### Entry 2 - [April 3, 2026, 6:00 PM]
 
 What I did: Implemented new functionality in the program
 
@@ -65,7 +65,7 @@ Solution: Used debugging and checked syntax carefully
 Time spent: 1 hour
 
 
-### Entry 3 [April 5, 2026, 3:30 PM]
+### Entry 3 - [April 5, 2026, 3:30 PM]
 
 What I did: Debugged and improved program performance
 
@@ -81,31 +81,37 @@ Solution: استخدمت الطباعة (print statements) لتتبع الأخط
 
 Time spent: 50 minutes
 
-### Entry 4 - [Date and Time]
-**What I did**: 
+### Entry 4 - [April 7, 2026, 8:10 PM]
 
-**Details**: 
+What I did: Completed remaining requirements of the assignment
 
-**Challenges**: 
+Details:
+ • Ensured all required features are implemented
+ • Cleaned up the code and removed unnecessary lines
+ • Checked formatting and structure
+ • Verified output matches assignment requirements
 
-**Solution**: 
+Challenges: التأكد من أن كل المتطلبات مغطاة بالكامل
 
-**Time spent**: 
+Solution: رجعت لورقة الواجب وتأكدت نقطة نقطة
 
----
+Time spent: 40 minutes
 
-### Entry 5 - [Date and Time]
-**What I did**: 
+### Entry 5 - [April 9, 2026, 5:45 PM]
 
-**Details**: 
+What I did: Final review and preparation for submission
 
-**Challenges**: 
+Details:
+ • Reviewed the entire project مرة أخيرة
+ • Tested all functionalities again
+ • تأكدت من عدم وجود أخطاء
+ • رفعت المشروع على GitHub بنجاح
 
-**Solution**: 
+Challenges: القلق من وجود أخطاء غير ملحوظة
 
-**Time spent**: 
+Solution: سويت testing أكثر من مرة وعلى سيناريوهات مختلفة
 
----
+Time spent: 35 minutes
 
 ### Entry 6 - [Optional - Date and Time]
 **What I did**: 
