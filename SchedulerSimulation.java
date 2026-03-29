@@ -44,12 +44,12 @@ class Process implements Runnable {
     // Constructor to initialize the process with name, burst time, and time quantum and priority
     // FEATURE 1: Added priority parameter to constructor
     // FEATURE 3: Initialize timing fields
-    public Process(String name, int burstTime, int timeQuantum) {
+    public Process(String name, int burstTime, int timeQuantum, int priority) {
         this.name = name;
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
-     this.priority = priority; // FEATURE 1: Initialize priority
+        this.priority = priority; // FEATURE 1: Initialize priority
         
         // FEATURE 3: Initialize timing fields
         this.creationTime = System.currentTimeMillis(); // Record when process is created
@@ -198,6 +198,13 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
+    // FEATURE 2: Static counter for context switches
+    // Incremented each time a new process starts running
+    private static int contextSwitchCount = 0;
+    
+    // FEATURE 3: List to store all completed processes for summary
+    private static List<Process> completedProcesses = new ArrayList<>();
+    
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
