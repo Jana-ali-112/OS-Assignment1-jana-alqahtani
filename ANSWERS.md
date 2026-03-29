@@ -20,14 +20,15 @@ A Process is an independent execution unit that has its own dedicated memory spa
 In Round-Robin scheduling, if a process does not finish within its assigned Time Quantum, it is preempted by the scheduler to allow other processes a fair share of the CPU. The process is moved from the "Running" state back to the end of the Ready Queue, where it must wait for its next turn.
 
 Example from my output:
-ظû╢ P1 executing quantum [4000ms]
-  ظأة Quantum progress: [ظûêظûêظûêظûّظûّظûّظûّظûّظûّظûّظûّظûّظûّظ         ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûّظûّظûّظûّظûّظûّظûّظ      ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظûّظûّظûّظ   ظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظظ  ظأة Quantum progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûê] 100%
-  ظ╕ P1 completed quantum 4000ms ظ¤é Overall progress: [ظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûêظûّظûّظûّ] 89%
-     Remaining time: 919ms
-  ظ╗ P1 yields CPU for context switch
 
-  ظئـ P1 (Priority: 3) added to ready queue ظ¤é Burst time: 8919ms
+  ? P1 executing quantum [4000ms] 
+  ? Quantum progress: [???????????????] 100%
+  ? P1 completed quantum 4000ms ? Overall progress: [????????????????????] 71%
+     Remaining time: 1611ms
+  ? P1 yields CPU for context switch
 
+  ? P1 (Priority: 2) added to ready queue ? Burst time: 5611ms
+  
 **Explanation of example:**
 Looking at our program output, when a process like P1 executes and its remainingTime is still greater than zero, the code prints: P1 yields CPU for context switch. At this point, the scheduler calls processQueue.add(thread), effectively re-queuing it. This ensures that no single process monopolizes the CPU for an extended period, which is the core principle of time-sharing systems. The process will eventually reach the front of the queue again to continue its execution from where it left off
 
