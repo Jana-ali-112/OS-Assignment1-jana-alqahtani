@@ -456,6 +456,12 @@ Repository Link: https://github.com/[your-username]/OS-Assignment1-[YourName]
 Video Link: [Google Drive link - make sure it's accessible to anyone with the link]
 Date Submitted: [Submission Date]
 ```
+Student Name: jana ali alqahtani
+2 Student ID: 445052112
+3 GitHub Username: jana-ali-112
+4 Repository Link: https://github.com/Jana-ali-112/OS-Assignment1-jana-alqahtani
+5 Video Link: https://drive.google.com/file/d/1patwtsavTjNgvCLmWWFt7XweLr0Qf5o5/view?usp=drive_link
+6 Date Submitted: 30 mar
 
 **Example:**
 ```
